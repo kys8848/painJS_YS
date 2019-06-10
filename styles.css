@@ -5,7 +5,8 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 30px 
+    padding-top: 30px;
+    padding: 50px 0px;
 
 }
 
@@ -14,12 +15,41 @@ body{
     width: 700px; /*흰도화지 생성*/
     height: 700px;
     background-color: white;
-    border-radius: 30px; /*도화지 모서리 둥글게*/
+    border-radius: 20px; /*도화지 모서리 둥글게*/
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.5), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 .controls{
     margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
+.controls .controls__btns{
+    margin-bottom: 30px;
+}
+
+.controls__btns button{
+    all:unset;
+    cursor: pointer;
+    background-color: white;
+    padding: 10px 0px;
+    width: 80px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.5), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba(0,0,0,0.2);
+    color: rgba(0,0,0,0.8);
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 12px;
+}
+
+.controls__btns button:active{
+    transform:scale(0.98);  /*이작업을 통해 버튼을 눌렀을떄(active)일때 말랑말랑하게 눌리는 버튼 느낌을 줄 수 있음*/
+}
+
+
 .controls .controls__colors{
     display: flex;
 }
@@ -30,4 +60,8 @@ body{
     height: 50px; /*색깔 모양 버튼 생성*/
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.5), 0 1px 3px rgba(0, 0, 0, 0.08);
     border-radius: 25px; /*둥글게 만들기 사이즈가 가로새로 50이므로 반경 25면 동그라미됨*/
+}
+
+.controls .controls__range{
+    margin-bottom: 20px;
 }
