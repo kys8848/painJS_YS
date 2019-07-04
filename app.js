@@ -2,8 +2,14 @@
 const canvas = document.getElementById("jsCanvas");
 const ctx = canvas.getContext("2d");
 
+canvas.width = 700;
+canvas.height = 700;
+
+
 ctx.strokeStyle = "#2c2c2c"; //선의 색깔 사전입력 stroke의 의미? 놀르 한번 젖는일(일)
 ctx.lineWidth = 2.5; // 선의 굵기 사진입력
+
+
 
 let painting = false;
 
