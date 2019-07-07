@@ -1,9 +1,11 @@
 
 const canvas = document.getElementById("jsCanvas");
 const ctx = canvas.getContext("2d");
+const colors = document.getElementsByClassName("jsColor");
 
-canvas.width = 700;
-canvas.height = 700;
+
+canvas.width = 700; //canvas 엘리먼트의 사이즈를 지정해줘야지 작동함
+canvas.height = 700; 
 
 
 ctx.strokeStyle = "#2c2c2c"; //선의 색깔 사전입력 stroke의 의미? 놀르 한번 젖는일(일)
@@ -50,6 +52,14 @@ function onMouseLeave(event) {
     painting = false;     
 }
 
+function handleColorClick(event){
+    //console.log(event.target.style); // 무슨 이벤트 내용이 오는지 확인용
+    const color =event.target.style.backgroundColor;
+    //console.log(color);
+    ctx.strokeStyle = color; //default 지정색을 바뀐색으로 overide
+}
+
+
 if(canvas){
     canvas.addEventListener("mousemove", onMouseMove);  //캔버스 안에서 움직일？？
     canvas.addEventListener("mousedown", startPainting);  //mousedown 은 마우스를 클릭 눌렀을때
@@ -57,3 +67,10 @@ if(canvas){
     canvas.addEventListener("mouseleave", stopPainting); // 마우스커서가 캔버스를 벗어났을때
 
 }
+
+console.log(Array.from(colors));  // array.form을 통해 array를 가지게됨 예) 0: div.controls__color.jsColor 이런식
+
+Array.from(colors).forEach(what => what.addEventListener("click",handleColorClick));//약간 생소한 부분임 어레이중 각각의 요소를 분리해내어 이벤트 클릭시 해당 내용을 긁어온다 정도로 해석
+// 여기 안에서 what은 아무것으로 바꿔도 상관없음
+// 그냥 그 array안에 있는 각각의 아이템들을 대표 하는것뿐임
+// what 이라는 어레이 엘레멘트 안에서 클릭을 하면 핸들 컬러 클릭이 실행됨
