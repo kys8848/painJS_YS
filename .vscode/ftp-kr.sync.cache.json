@@ -1,0 +1,56 @@
+{
+  "ftp://orthogonal.dothome.co.kr:21@orthogonal": {
+    "html": {
+      ".git": {},
+      ".gitignore": {
+        "type": "-",
+        "size": 914,
+        "lmtime": 0,
+        "modified": false
+      },
+      "README.md": {
+        "type": "-",
+        "size": 504,
+        "lmtime": 0,
+        "modified": false
+      },
+      "app.js": {
+        "type": "-",
+        "size": 2661,
+        "lmtime": 0,
+        "modified": false
+      },
+      "index.html": {
+        "type": "-",
+        "size": 2102,
+        "lmtime": 1562513331895,
+        "modified": false
+      },
+      "reset.css": {
+        "type": "-",
+        "size": 1092,
+        "lmtime": 0,
+        "modified": false
+      },
+      "styles.css": {
+        "type": "-",
+        "size": 1726,
+        "lmtime": 0,
+        "modified": false
+      },
+      "this is server .txt": {
+        "type": "-",
+        "size": 0,
+        "lmtime": 0,
+        "modified": false
+      },
+      "welcome.htm": {
+        "type": "-",
+        "size": 283,
+        "lmtime": 0,
+        "modified": false
+      }
+    }
+  },
+  "$version": 1
+}

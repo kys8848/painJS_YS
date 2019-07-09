@@ -1,0 +1,16 @@
+{
+    "host": "orthogonal.dothome.co.kr",
+    "username": "orthogonal",
+    "password": "k4277819!",
+    "remotePath": "/html",
+    "protocol": "ftp",
+    "port": 21,
+    "fileNameEncoding": "utf8",
+    "autoUpload": true,
+    "autoDelete": false,
+    "autoDownload": false,
+    "ignore": [
+        ".git",
+        "/.vscode"
+    ]
+}
