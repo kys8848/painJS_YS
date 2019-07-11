@@ -2,6 +2,7 @@
 const canvas = document.getElementById("jsCanvas");
 const ctx = canvas.getContext("2d");
 const colors = document.getElementsByClassName("jsColor");
+const jsRange = document.getElementById("jsRange");
 
 
 canvas.width = 700; //canvas 엘리먼트의 사이즈를 지정해줘야지 작동함
@@ -56,7 +57,11 @@ function handleColorClick(event){
     //console.log(event.target.style); // 무슨 이벤트 내용이 오는지 확인용
     const color =event.target.style.backgroundColor;
     //console.log(color);
-    ctx.strokeStyle = color; //default 지정색을 바뀐색으로 overide
+    ctx.strokeStyle = color; //default 지정색을 바뀐색으로 overide 시키
+}
+
+function handleRangeChange(event){
+    console.log(event);
 }
 
 
@@ -70,7 +75,14 @@ if(canvas){
 
 console.log(Array.from(colors));  // array.form을 통해 array를 가지게됨 예) 0: div.controls__color.jsColor 이런식
 
-Array.from(colors).forEach(what => what.addEventListener("click",handleColorClick));//약간 생소한 부분임 어레이중 각각의 요소를 분리해내어 이벤트 클릭시 해당 내용을 긁어온다 정도로 해석
+
+Array.from(colors).forEach(what =>
+    what.addEventListener("click",handleColorClick));//약간 생소한 부분임 어레이중 각각의 요소를 분리해내어 이벤트 클릭시 해당 내용을 긁어온다 정도로 해석
 // 여기 안에서 what은 아무것으로 바꿔도 상관없음
 // 그냥 그 array안에 있는 각각의 아이템들을 대표 하는것뿐임
 // what 이라는 어레이 엘레멘트 안에서 클릭을 하면 핸들 컬러 클릭이 실행됨
+
+if(range){
+    range.addEventListener("input", handleRangeChange); //input element를 사용했으므로 input에 반응
+}
+
