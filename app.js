@@ -2,7 +2,8 @@
 const canvas = document.getElementById("jsCanvas");
 const ctx = canvas.getContext("2d");
 const colors = document.getElementsByClassName("jsColor");
-const jsRange = document.getElementById("jsRange");
+const range = document.getElementById("jsRange");
+const mode = document.getElementById("jsMode");
 
 
 canvas.width = 700; //canvas 엘리먼트의 사이즈를 지정해줘야지 작동함
@@ -15,6 +16,9 @@ ctx.lineWidth = 2.5; // 선의 굵기 사진입력
 
 
 let painting = false;
+let filling = false;
+
+
 
 function stopPainting() {
     painting = false;
@@ -61,8 +65,22 @@ function handleColorClick(event){
 }
 
 function handleRangeChange(event){
-    console.log(event);
+    //console.log(event.target.value);
+    const size = event.target.value;
+    ctx.lineWidth = size;
 }
+
+function handleModeClick(){
+    if(filling === true){
+        filling = false;
+        mode.innerText = "Fill";
+    }else {
+        filling = true;
+        mode.innerText =  "Paint";
+    }
+
+}
+
 
 
 if(canvas){
@@ -84,5 +102,10 @@ Array.from(colors).forEach(what =>
 
 if(range){
     range.addEventListener("input", handleRangeChange); //input element를 사용했으므로 input에 반응
+    
+}
+
+if(mode){
+    mode.addEventListener("click", handleModeClick);
 }
 
