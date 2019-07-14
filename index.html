@@ -8,6 +8,9 @@
     <title>PaintJS</title>
 </head>
 <h1>오소고날의 자유그림판</h1>
+<br>
+
+
 <body>
      
     <canvas id="jsCanvas" class="canvas"></canvas>
@@ -24,7 +27,7 @@
         <div class="controls__btns">
             <button id="jsMode">Fill</button>
             <button id="jsSave">Save</button></div> <!--여기 만들때 "div.controls__btns>button#jsMode+button#jsSave" 라고 치면 9개가 만들어짐-->
-        <div class="controls__colors" id="jsColors">
+        <div class="controls__colors" id="jsColors"> <!--클래스 아래 차일드 클래스 또한 상속자이기도 하지만 고유하여야한다-->
             <div class="controls__color jsColor" 
                  style="background-color: #2c2c2c"></div>
             <div class="controls__color jsColor" 
